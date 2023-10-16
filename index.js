@@ -60,6 +60,14 @@ function max(arr) {
 }
 console.log("4." + " " + max([20, 5, 8, 15, 56, 26, 81, 3, 58, 5]));
 
+//
+
+//
+
+//
+
+//
+
 //5. Өгөгдсөн string-ийн урвууг буцаа. (Hello -> olleH).
 
 function reverse(str) {
@@ -357,3 +365,71 @@ console.log("16." + " " + missingItems([9, 1, 4, 2, 10, 6], 10));
 //
 
 //17. N тоо өгөгдөв. Паскалын гурвалжны N дахь мөрийг хэвлэ.
+
+var getRow = function (rowIndex) {
+  if (rowIndex == 0) {
+    return [1];
+  } else {
+    var row = [1];
+    previousLine = getRow(rowIndex - 1);
+    for (let i = 0; i < previousLine.length - 1; i++) {
+      row.push(previousLine[i] + previousLine[i + 1]);
+    }
+    row.push(1);
+  }
+  return row;
+};
+console.log(getRow(3));
+
+//18. Өгсөн 2 тооны хамгийн их ерөнхий хуваагчийг ол.
+
+function egcd(a, b) {
+  if (a == 0) return b;
+
+  while (b != 0) {
+    if (a > b) a = a - b;
+    else b = b - a;
+  }
+
+  return a;
+}
+console.log(egcd(40, 60));
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//19. Цифрүүдийн кубуудын нийлбэр нь өөртэйгөө тэнцүү байдаг бүх 3 оронтой тоог ол. /Armstrong number/
+
+//
+
+//20. N тоо болон массив өгөгдөв. Нийлбэр нь N байх 2 тоог олж index ийг нь буцаа. олдохгүй бол “Error” буцаа.
+
+//21. Өгөгдсөн массивийг өсөх эрэмбээр эрэмблэ.
+
+let arr = [4, 2, 5, 1, 3];
+let temp;
+
+function converter(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] > arr[j]) {
+        temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+      }
+    }
+  }
+  return arr;
+}
+
+const newArr = converter(arr);
+console.log(newArr);

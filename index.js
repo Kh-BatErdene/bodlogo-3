@@ -381,19 +381,35 @@ var getRow = function (rowIndex) {
 };
 console.log(getRow(3));
 
+//
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//
+
 //18. Өгсөн 2 тооны хамгийн их ерөнхий хуваагчийг ол.
 
 function egcd(a, b) {
-  if (a == 0) return b;
+  if (a == 0) return 0;
 
   while (b != 0) {
-    if (a > b) a = a - b;
-    else b = b - a;
+    if (a > b) a -= b;
+    else b -= a;
   }
 
   return a;
 }
-console.log(egcd(40, 60));
+console.log("18. " + egcd(81, 27));
 
 //
 
@@ -408,17 +424,55 @@ console.log(egcd(40, 60));
 //
 
 //19. Цифрүүдийн кубуудын нийлбэр нь өөртэйгөө тэнцүү байдаг бүх 3 оронтой тоог ол. /Armstrong number/
+function cube(arr) {
+  n = 5;
+  let cube = 0;
+  for (let i = 0; i < n; i++) {
+    cube = n * n * n;
+    if (cube === arr) {
+      return true;
+    }
+    return false;
+  }
+  return cube;
+}
+console.log("19. " + cube(371));
+//
+
+//
+
+//
 
 //
 
 //20. N тоо болон массив өгөгдөв. Нийлбэр нь N байх 2 тоог олж index ийг нь буцаа. олдохгүй бол “Error” буцаа.
 
+function Sum(n, arr) {
+  for (let i = 0; i < n.length; i++) {
+    let b = a[i];
+    for (let j = 1; j < arr.length; j++) {
+      let c = a[j];
+      if (b + c == n) {
+        return i, j;
+      }
+    }
+  }
+}
+console.log("20." + " " + Sum(10), [4, 6, 3, 7, 6, 2]);
+
+//
+
+//
+
+//
+
+//
+
 //21. Өгөгдсөн массивийг өсөх эрэмбээр эрэмблэ.
 
-let arr = [4, 2, 5, 1, 3];
-let temp;
-
 function converter(arr) {
+  let temp = 0;
+
   for (let i = 0; i < arr.length; i++) {
     for (let j = i + 1; j < arr.length; j++) {
       if (arr[i] > arr[j]) {
@@ -430,6 +484,4 @@ function converter(arr) {
   }
   return arr;
 }
-
-const newArr = converter(arr);
-console.log(newArr);
+console.log("21." + " " + converter([30, 56, 73, 0, 30]));
